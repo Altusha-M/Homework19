@@ -1,3 +1,5 @@
+package myApp;
+
 import javax.ejb.EJB;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -7,10 +9,12 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
 
-
+/**
+ * This servlet shows all files, folders and everything in these folders in the specific directory
+ * To start this servlet, please enter 'http://server-ip:8080/Homework19/
+ * To specify directory on server, add getDirs?reqDir='your directory'
+ */
 @WebServlet("/getDirs")
 public class App extends HttpServlet {
 

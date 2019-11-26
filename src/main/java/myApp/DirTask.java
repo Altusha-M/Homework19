@@ -1,3 +1,5 @@
+package myApp;
+
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -10,17 +12,25 @@ import java.util.concurrent.ForkJoinTask;
 import java.util.concurrent.RecursiveTask;
 import java.util.stream.Collectors;
 
+/**
+ * This class suppose to collect some directory deep into it.
+ * You can use it as task for threads in ThreadPool (e.g. ForkJoinPool)
+ * to parallel your computing
+ * DirTask t = new DirTask(dir);
+ * List<String> invoke = forkJoinPool.invoke(t);
+ */
 public class DirTask extends RecursiveTask<List<String>> {
 
-    interface i {
-
-    }
     private String dir;
 
     public DirTask(String dir) {
         this.dir = dir;
     }
 
+    /**
+     * Collects paths and files into specific directory
+     * @return all files and dirs, inside requested directory
+     */
     @Override
     protected List<String> compute() {
         try {

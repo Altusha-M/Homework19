@@ -1,7 +1,6 @@
-import org.w3c.dom.ls.LSOutput;
+package myApp;
 
 import javax.ejb.Stateless;
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.ForkJoinPool;
@@ -9,7 +8,11 @@ import java.util.concurrent.ForkJoinPool;
 @Stateless(name = "MyBean")
 public class MyEJBean {
 
-    int a;
+    /**
+     *
+     * @param dir specific directory which files and dirs you want to get
+     * @return all files and dirs, inside requested directory
+     */
     ArrayList<String> getDir(String dir) {
         System.out.println();
         ForkJoinPool forkJoinPool = new ForkJoinPool(10);

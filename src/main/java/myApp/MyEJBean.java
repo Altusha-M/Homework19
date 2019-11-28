@@ -26,6 +26,7 @@ public class MyEJBean {
             }
             SL.add(s);
         }
+        String s = "java";
         return SL;
     }
 }
